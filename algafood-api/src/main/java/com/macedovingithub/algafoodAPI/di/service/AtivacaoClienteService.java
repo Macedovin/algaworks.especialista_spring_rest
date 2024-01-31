@@ -3,14 +3,25 @@ package com.macedovingithub.algafoodAPI.di.service;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
-import com.macedovingithub.algafoodAPI.di.notificacao.NotificadorEmail;
+import com.macedovingithub.algafoodAPI.di.notificacao.Notificador;
 
 @Component
 public class AtivacaoClienteService {
 
-	public NotificadorEmail notificador;
+	public Notificador notificador;
 	
+	// Injetando dependência usando Construtor com argumentos
+	// Utilizando uma Interface para redução de acoplamento
+	public AtivacaoClienteService(Notificador notificador) {
+		
+		this.notificador = notificador;
+		
+		System.out.println("AtivacaoClienteService: " + notificador);
+	}
+
 	public void ativar(Cliente cliente) {
+		
+		System.out.println("Cliente ativado.");
 		
 		cliente.ativar();
 		
