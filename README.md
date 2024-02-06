@@ -34,79 +34,53 @@
 - Learning is also the reason of many comments in the code.
 
 ## Programmatic content
-
-<details open>
-<summary><h3>1. Introdução<h3></summary>
 <br/>
 
-1.1. Introdução ao treinamento
+- [1. Introduction](#1-introduction)
+- [2. Spring and Dependency Injection](#2-spring-and-dependency-injection)
 
-1.2. Como usar o suporte da AlgaWorks
+---
 
-1.3. Por que desenvolver REST APIs?
+<details open>
+<summary>
 
-1.4. Conhecendo o modelo de domínio do projeto do curso
+### 1. Introduction
 
-1.5. Preparando o ambiente de desenvolvimento: JDK e STS for Eclipse
+</summary>
+<br/>
+
+1.01. Introduction to training
+
+1.02. How to use AlgaWorks support
+
+1.03. Why develop REST APIs?
+
+1.04. Understanding the Course Design Domain Model
+
+1.05. Preparing the development environment: JDK and STS for Eclipse
 
 </details>
 
 <details open>
-<summary><h3>2. Spring e Injeção de Dependências<h3></summary>
+<summary>
+
+### 2. Spring and Dependency Injection
+
+</summary>
 <br/>
 
-2.1. Por que aprender e usar Spring?
+2.01. Why learn and use Spring?
 
-2.2. Conhecendo o ecossistema Spring
+2.02. Getting to know the Spring ecosystem
 
-2.3. Spring vs Jakarta EE (Java EE)
+2.03. Spring vs Jakarta EE (Java EE)
 
-2.4. Conhecendo o Spring Boot
+2.04. Getting to know Spring Boot
 
-2.5. Criando um projeto Spring Boot com Spring Initialize
+2.05. Creating a Spring Boot project with Spring Initializr
 
-2.6. Conhecendo o Maven e o pom.xml de um projeto Spring Boot
+2.06. Getting to know Maven and the pom.xml of a Spring Boot project
 
-2.7. Criando um controller com Spring MVC
+2.07. Creating a controller with Spring MVC
 
-2.8. Restart mais rápido da aplicação com DevTools
-
-2.9. O que é injeção de dependências?
-
-2.10. Conhecendo o IoC Container do Spring
-
-2.11. Definindo beans com @Component
-
-2.12. Injetando dependências (beans Spring)
-
-2.13. Usando @Configuration e @Bean para definir beans
-
-2.14. Conhecendo os pontos de injeção e a anotação @Autowired
-
-2.15. Dependência opcional com @Autowired
-
-2.16. Ambiguidade de beans e injeção de lista de beans
-
-2.17. Desambiguação de beans com @Primary
-
-2.18. Desambiguação de beans com @Qualifier
-
-2.19. Desambiguação de beans com anotação customizada
-
-2.20. Mudando o comportamento da aplicação com Spring Profiles
-
-2.21. Criando métodos de callback do ciclo de vida dos beans
-
-2.22. Publicando e consumindo eventos customizados
-
-2.23. Configurando projetos Spring Boot com o application.properties
-
-2.24. Substituindo propriedades via linha de comando e variáveis de ambiente
-
-2.25. Criando e acessando propriedades customizadas com @Value
-
-2.26. Acessando propriedades com @ConfigurationProperties
-
-2.27. Alterando a configuração do projeto dependendo do ambiente (com Spring Profiles)
-
-2.28. Ativando o Spring Profile por linha de comando e variável de ambiente
+2.08. Faster application restart with DevTools
