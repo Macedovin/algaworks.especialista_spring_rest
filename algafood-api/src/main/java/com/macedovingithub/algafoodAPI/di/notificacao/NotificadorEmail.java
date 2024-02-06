@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
-@Component
+//@Component
 public class NotificadorEmail implements Notificador {
 		
 	public NotificadorEmail() {
