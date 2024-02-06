@@ -5,7 +5,7 @@ import com.macedovingithub.algafoodAPIConfig.di.notificacao.Notificador;
 
 public class AtivacaoClienteService {
 
-	private Notificador notificador;
+	public Notificador notificador;
 	
 	// Injetando dependência usando Construtor com argumentos
 	// Utilizando uma Interface para redução de acoplamento
