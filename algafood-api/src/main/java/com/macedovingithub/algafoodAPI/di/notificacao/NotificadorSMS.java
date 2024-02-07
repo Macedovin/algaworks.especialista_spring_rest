@@ -1,9 +1,12 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
+@Qualifier("normal") // Utilizando identificador com nome mais abrangente
+//@Qualifier("sms")
 //@Primary
 @Component
 public class NotificadorSMS implements Notificador {

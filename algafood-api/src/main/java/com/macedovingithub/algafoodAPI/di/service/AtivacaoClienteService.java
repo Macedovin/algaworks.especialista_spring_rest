@@ -1,6 +1,7 @@
 package com.macedovingithub.algafoodAPI.di.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
@@ -12,7 +13,8 @@ public class AtivacaoClienteService {
 //	@Autowired(required = false)
 //  Injetando dependência usando Atributo
 //	private Notificador notificador;
-
+	
+	@Qualifier("urgente")  // Indentificando o bean a ser utilizado 
 	@Autowired
 	private Notificador notificador;
 	

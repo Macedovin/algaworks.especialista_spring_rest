@@ -1,15 +1,16 @@
 package com.macedovingithub.algafoodAPIConfig;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import com.macedovingithub.algafoodAPIConfig.di.notificacao.NotificadorEmail;
 import com.macedovingithub.algafoodAPIConfig.di.notificacao.NotificadorSMS;
 
 @Configuration
 public class NotificacaoConfig {
-
+	
+	@Qualifier("urgente")
 	@Bean
 	public NotificadorEmail notificadorEmail() {
 		
@@ -19,8 +20,9 @@ public class NotificacaoConfig {
 		return notificador;
 	}
 	
+	@Qualifier("normal")
 	@Bean
-	@Primary
+	//@Primary
 	public NotificadorSMS notiificadorSMS() {
 		
 		NotificadorSMS notificador = new NotificadorSMS();

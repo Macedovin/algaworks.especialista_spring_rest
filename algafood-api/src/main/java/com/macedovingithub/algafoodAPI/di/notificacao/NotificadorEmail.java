@@ -1,11 +1,13 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
-@Primary                                    
+@Qualifier("urgente") // Utilizando identificador com nome mais abrangente
+//@Qualifier("email")
+//@Primary                                    
 @Component
 public class NotificadorEmail implements Notificador {
 		
