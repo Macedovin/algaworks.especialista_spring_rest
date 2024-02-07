@@ -1,5 +1,7 @@
 package com.macedovingithub.algafoodAPI.di.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +12,12 @@ import com.macedovingithub.algafoodAPI.di.notificacao.Notificador;
 public class AtivacaoClienteService {
 
 	@Autowired(required = false)
-	// Injetando dependência usando Atributo
-	private Notificador notificador;
+//  Injetando dependência usando Atributo
+//  private Notificador notificador;
 
+//  RESOLVENDO DESAMBIGUAÇÃO -> Lista
+	private List<Notificador> notificadores;
+	
 //	@Autowired
 //	// Injetando dependência usando Construtor com argumentos
 //	// Utilizando uma Interface para redução de acoplamento
@@ -34,11 +39,15 @@ public class AtivacaoClienteService {
 		
 		cliente.ativar();
 		
-// 		Verifica a existência de um objeto notificador
-		if (notificador != null) {
-			notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-		} else {
-			System.out.println("Não existe notificador, mas cliente foi ativado.");
+// 		ENHANCED FOR -> Para cada notificador da Lista de Notificadores, notificar cliente 
+		for (Notificador notificador : notificadores) {
+			
+//	 		Verifica a existência de um objeto notificador
+			if (notificador != null) {
+				notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+			} else {
+				System.out.println("Não existe notificador, mas cliente foi ativado.");
+			}
 		}
 		
 //     	Sintaxe com uso do "Optional"
