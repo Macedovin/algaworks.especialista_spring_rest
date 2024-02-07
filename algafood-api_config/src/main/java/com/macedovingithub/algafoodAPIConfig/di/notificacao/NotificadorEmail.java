@@ -19,7 +19,7 @@ public class NotificadorEmail implements Notificador {
 	@Override
 	public void notificar(Cliente cliente, String mensagem) {
 		
-		System.out.println("Notificar cliente...");
+		System.out.println("Notificar cliente por e-mail...");
 		
 		// Verifica se apropriedade caixaAlta é utilizada
 		if (this.caixaAlta) { 

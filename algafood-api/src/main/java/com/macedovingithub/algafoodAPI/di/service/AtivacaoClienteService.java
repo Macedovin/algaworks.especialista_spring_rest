@@ -1,7 +1,5 @@
 package com.macedovingithub.algafoodAPI.di.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +9,15 @@ import com.macedovingithub.algafoodAPI.di.notificacao.Notificador;
 @Component
 public class AtivacaoClienteService {
 
-	@Autowired(required = false)
+//	@Autowired(required = false)
 //  Injetando dependência usando Atributo
-//  private Notificador notificador;
+//	private Notificador notificador;
 
+	@Autowired
+	private Notificador notificador;
+	
 //  RESOLVENDO DESAMBIGUAÇÃO -> Lista
-	private List<Notificador> notificadores;
+//	private List<Notificador> notificadores;
 	
 //	@Autowired
 //	// Injetando dependência usando Construtor com argumentos
@@ -38,23 +39,26 @@ public class AtivacaoClienteService {
 		System.out.println("Cliente ativado.");
 		
 		cliente.ativar();
-		
+
+// 		Desambiguação com LISTA DE BEANS
 // 		ENHANCED FOR -> Para cada notificador da Lista de Notificadores, notificar cliente 
-		for (Notificador notificador : notificadores) {
-			
+//		for (Notificador notificador : notificadores) {
+//			
 //	 		Verifica a existência de um objeto notificador
-			if (notificador != null) {
-				notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-			} else {
-				System.out.println("Não existe notificador, mas cliente foi ativado.");
-			}
-		}
+//			if (notificador != null) {
+//				notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+//			} else {
+//				System.out.println("Não existe notificador, mas cliente foi ativado.");
+//			}
+//		}
 		
 //     	Sintaxe com uso do "Optional"
 //		Optional.ofNullable(notificador)       // Verifica se é nulo o objeto com a classe Optional 
 //	    .ifPresentOrElse(n -> n.notificar(cliente, "Seu cadastro no sistema está ativo!"),
 //	         () -> System.out.println("Nemhum notificador encontrado, mas cliente foi ativado com sucesso.!"));
 		
+		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+	
 	}
 	
 //	@Autowired

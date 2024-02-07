@@ -1,14 +1,11 @@
-package com.macedovingithub.algafoodAPI.di.notificacao;
+package com.macedovingithub.algafoodAPIConfig.di.notificacao;
 
-import org.springframework.stereotype.Component;
+import com.macedovingithub.algafoodAPIConfig.di.modelo.Cliente;
 
-import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
-
-//@Primary
-@Component
 public class NotificadorSMS implements Notificador {
-		
+	
 	public NotificadorSMS() {
+		
 		System.out.println("NotificadorSMS");
 	}
 	
@@ -20,4 +17,5 @@ public class NotificadorSMS implements Notificador {
 		System.out.printf("Notificando %s por SMS através do telefone %s: %s\n", 
 				cliente.getNome(), cliente.getTelefone(), mensagem);
 	}
+
 }
