@@ -1,11 +1,12 @@
 package com.macedovingithub.algafoodAPI.di.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
+import com.macedovingithub.algafoodAPI.di.notificacao.NivelUrgencia;
 import com.macedovingithub.algafoodAPI.di.notificacao.Notificador;
+import com.macedovingithub.algafoodAPI.di.notificacao.TipoDoNotificador;
 
 @Component
 public class AtivacaoClienteService {
@@ -14,7 +15,8 @@ public class AtivacaoClienteService {
 //  Injetando dependência usando Atributo
 //	private Notificador notificador;
 	
-	@Qualifier("urgente")  // Indentificando o bean a ser utilizado 
+//	@Qualifier("urgente")  // Indentificando o bean a ser utilizado 
+	@TipoDoNotificador(NivelUrgencia.NORMAL)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
 	@Autowired
 	private Notificador notificador;
 	

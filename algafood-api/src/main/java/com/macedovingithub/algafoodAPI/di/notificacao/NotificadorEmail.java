@@ -1,11 +1,11 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
-@Qualifier("urgente") // Utilizando identificador com nome mais abrangente
+@TipoDoNotificador(NivelUrgencia.URGENTE)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
+//@Qualifier("urgente") // Utilizando identificador com nome mais abrangente
 //@Qualifier("email")
 //@Primary                                    
 @Component
