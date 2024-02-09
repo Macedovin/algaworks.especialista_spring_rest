@@ -1,6 +1,7 @@
 package com.macedovingithub.algafoodAPIConfig;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +14,8 @@ public class ServiceConfig {
 	// Instanciação e possível configurações da classe AtivacaoClienteService 
 	// Utilizando um outro BEAN do tipo Notificador 
 	@Bean
-	public AtivacaoClienteService ativacaoClienteService(@Qualifier("urgente") Notificador notificador) {
+	public AtivacaoClienteService ativacaoClienteService(/*@Qualifier("urgente")*/ 
+			List<Notificador> notificador) {
 		
 		return new AtivacaoClienteService(notificador);
 	}
