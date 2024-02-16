@@ -1,7 +1,6 @@
 package com.macedovingithub.algafoodAPIConfig;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
@@ -11,7 +10,7 @@ import com.macedovingithub.algafoodAPIConfig.di.notificacao.NotificadorEmailMock
 import com.macedovingithub.algafoodAPIConfig.di.notificacao.NotificadorSMS;
 import com.macedovingithub.algafoodAPIConfig.di.notificacao.TipoDoNotificador;
 
-@Configuration
+//@Configuration
 public class NotificacaoConfig {
 	
 	@Profile("prod") // Utiliza a ANOTAÇÃO Profile e o identificador de perfil 
