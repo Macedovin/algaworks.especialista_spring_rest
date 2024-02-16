@@ -1,10 +1,12 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
-@TipoDoNotificador(NivelUrgencia.NORMAL)    // Utiliza a ANOTAÇÃO CUSTOMIZADA
+@Profile("prod")  // ANOTAÇÂO Profile e seu identificador de perfil
+@TipoDoNotificador(NivelUrgencia.URGENTE)    // Utiliza a ANOTAÇÃO CUSTOMIZADA
 //@Qualifier("normal") // Utilizando identificador com nome mais abrangente
 //@Qualifier("sms")
 //@Primary
