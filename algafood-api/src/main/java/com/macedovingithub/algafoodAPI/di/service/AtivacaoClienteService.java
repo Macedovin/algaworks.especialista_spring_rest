@@ -1,5 +1,7 @@
 package com.macedovingithub.algafoodAPI.di.service;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +11,8 @@ import com.macedovingithub.algafoodAPI.di.notificacao.Notificador;
 import com.macedovingithub.algafoodAPI.di.notificacao.TipoDoNotificador;
 
 @Component
-public class AtivacaoClienteService {
+// Implementa interfaces que controlam o ciclo de vida dos Beans -> NÃO RECOMENDADO
+public class AtivacaoClienteService implements InitializingBean, DisposableBean {
 
 //	@Autowired(required = false)
 //  Injetando dependência usando Atributo
@@ -37,6 +40,22 @@ public class AtivacaoClienteService {
 //	public AtivacaoClienteService(String qualquer) {
 //		
 //	}	
+
+// 	ANOTAÇÃO que define o momento de chamada do método contido no BEAN como sendo no início do seu ciclo de vida
+//	@PostConstruct
+	public void init() {
+		
+		System.out.println("INIT " + notificador);
+	}
+
+// 	ANOTAÇÃO que define o momento de chamada do método contido no BEAN como sendo no fim do seu ciclo vida	
+// 	-> A interface DisposableBean possui método de mesmo nome -> NÃO RECOMENDADO
+//	@PreDestroy
+	@Override
+	public void destroy() {
+		
+		System.out.println("DESTROY");
+	}
 	
 	public void ativar(Cliente cliente) {
 
@@ -63,6 +82,14 @@ public class AtivacaoClienteService {
 		
 		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
 	
+	}
+	
+// 	Adiciona um método requerido pela interface InitializingBean com nome predefinido
+// -> NÃO RECOMENDADO
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		
+		System.out.println("INIT " + notificador);
 	}
 	
 //	@Autowired
