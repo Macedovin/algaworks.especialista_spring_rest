@@ -18,7 +18,7 @@ public class NotificacaoConfig {
 	@TipoDoNotificador(NivelUrgencia.NORMAL) // Utiliza a ANOTAÇÃO CUSTOMIZADA
 	//@Qualifier("urgente")
 	@Bean
-	@Primary // Fazendo desambiguação
+	//@Primary // Fazendo desambiguação
 	public NotificadorEmail notificadorEmail() {
 		
 		NotificadorEmail notificador = new NotificadorEmail("smtp.algamail.com.br");
@@ -42,7 +42,7 @@ public class NotificacaoConfig {
 	@TipoDoNotificador(NivelUrgencia.NORMAL) // Utiliza a ANOTAÇÃO CUSTOMIZADA
 	//@Qualifier("normal")
 	@Bean
-	//@Primary
+	@Primary
 	public NotificadorSMS notiificadorSMS() {
 		
 		NotificadorSMS notificador = new NotificadorSMS();

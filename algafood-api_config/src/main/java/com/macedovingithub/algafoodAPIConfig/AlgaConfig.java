@@ -22,7 +22,8 @@ public class AlgaConfig {
 	@Bean
 	public AtivacaoClienteService ativacaoClienteService() {
 		
-		return new AtivacaoClienteService(notificadorEmail());
+		//return new AtivacaoClienteService(notificadorEmail());
+		return new AtivacaoClienteService();
 	}
 	
 	
