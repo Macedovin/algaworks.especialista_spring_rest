@@ -1,5 +1,6 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,13 @@ import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 @Component
 public class NotificadorEmail implements Notificador {
 	
+// -> Utilizando as PROPRIEDADES CUSTOMIZADAS
+	@Value("${notificador.email.host-server}")
+	private String host;
+	
+	@Value("${notificador.email.porta-servidor}")
+	private int porta;
+	
 	// Construtor uitlizado para debbug do Bean
 	public NotificadorEmail() {
 		System.out.println("NotificadorEmail REAL");
@@ -22,6 +30,9 @@ public class NotificadorEmail implements Notificador {
 	public void notificar(Cliente cliente, String mensagem) {
 		
 		System.out.println("Notificar cliente por e-mail...");
+// 	-> Fazendo o debugg do uso das propriedades
+		System.out.println("Host: " + host);
+		System.out.println("Porta: " + porta);
 		
 		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);

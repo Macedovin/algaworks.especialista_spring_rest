@@ -15,7 +15,7 @@ import com.macedovingithub.algafoodAPI.di.service.ClienteAtivadoEvent;
 public class NotificacaoService {
 
 // 	-> Injetando a classe que faz a notificação e especificando o método a notificar
-	@TipoDoNotificador(NivelUrgencia.URGENTE)
+	@TipoDoNotificador(NivelUrgencia.NORMAL)
 	@Autowired
 	private Notificador notificador; 
 	
