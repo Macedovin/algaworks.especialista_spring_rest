@@ -17,6 +17,9 @@ public class NotificadorEmail implements Notificador {
 	@Value("${notificador.email.server-port}")
 	private int port;
 	
+	@Value("${exibe.path.java}")
+	private String localJava;
+	
 	// Atribui propriedade no Construtor
 	public NotificadorEmail(String hostServidorSMTP) {
 		
@@ -31,7 +34,8 @@ public class NotificadorEmail implements Notificador {
 		System.out.println("Notificar cliente por e-mail...");
 // ->  Fazendo o debug de utilização das propriedades do arquivo deconfiguração
 		System.out.println("Host: " + host);
-		System.out.println("Porta: " + port);		
+		System.out.println("Porta: " + port);
+		System.out.println("Java: " + localJava);
 		
 		// Verifica se apropriedade caixaAlta é utilizada
 		if (this.caixaAlta) { 

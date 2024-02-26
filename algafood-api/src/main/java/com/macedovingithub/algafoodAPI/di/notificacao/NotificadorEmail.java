@@ -21,6 +21,13 @@ public class NotificadorEmail implements Notificador {
 	@Value("${notificador.email.porta-servidor}")
 	private int porta;
 	
+	@Value("${exibe.path.java}")
+	private String localJava;
+	
+// 	-> Obtem VARIÁVEL DE AMBIENTE sem o arquivo de configuração
+	@Value("${OS}")
+	private String osEnvVar;
+	
 	// Construtor uitlizado para debbug do Bean
 	public NotificadorEmail() {
 		System.out.println("NotificadorEmail REAL");
@@ -33,6 +40,8 @@ public class NotificadorEmail implements Notificador {
 // 	-> Fazendo o debugg do uso das propriedades
 		System.out.println("Host: " + host);
 		System.out.println("Porta: " + porta);
+		System.out.println("Java: " + localJava);
+		System.out.println("Sistema operacional: " + osEnvVar);
 		
 		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
