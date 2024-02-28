@@ -1,5 +1,6 @@
 package com.macedovingithub.algafoodAPI.di.notificacao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
 @Profile("prod")  // ANOTAÇÂO Profile e seu identificador de perfil
-@TipoDoNotificador(NivelUrgencia.NORMAL)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
+@TipoDoNotificador(NivelUrgencia.URGENTE)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
 //@Qualifier("urgente") // Utilizando identificador com nome mais abrangente
 //@Qualifier("email")
 //@Primary                                    
@@ -15,11 +16,17 @@ import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 public class NotificadorEmail implements Notificador {
 	
 // -> Utilizando as PROPRIEDADES CUSTOMIZADAS
+/*
 	@Value("${notificador.email.host-server}")
 	private String host;
 	
 	@Value("${notificador.email.porta-servidor}")
 	private int porta;
+*/
+
+//	-> Utiliza as propriedades da classe de configuração
+	@Autowired
+	private NotificadorEmailProperties properties;
 	
 	@Value("${exibe.path.java}")
 	private String localJava;
@@ -38,8 +45,8 @@ public class NotificadorEmail implements Notificador {
 		
 		System.out.println("Notificar cliente por e-mail...");
 // 	-> Fazendo o debugg do uso das propriedades
-		System.out.println("Host: " + host);
-		System.out.println("Porta: " + porta);
+		System.out.println("Host: " + properties.getHostServer());
+		System.out.println("Porta: " + properties.getPortaServidor());
 		System.out.println("Java: " + localJava);
 		System.out.println("Sistema operacional: " + osEnvVar);
 		
