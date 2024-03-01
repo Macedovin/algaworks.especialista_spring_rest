@@ -16,6 +16,11 @@ public class NotificadorEmailProperties {
 	 * Porta do servidor de email
 	 */
 	private Integer serverPort;
+	/**
+	 * Nome do host de email
+	 */
+	private String hostName;
+	
 	public String getServerHost() {
 		return serverHost;
 	}
@@ -27,6 +32,12 @@ public class NotificadorEmailProperties {
 	}
 	public void setServerPort(Integer serverPort) {
 		this.serverPort = serverPort;
+	}
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
 	}	
 			
 }

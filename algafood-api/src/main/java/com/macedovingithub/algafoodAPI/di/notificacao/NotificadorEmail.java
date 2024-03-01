@@ -2,16 +2,17 @@ package com.macedovingithub.algafoodAPI.di.notificacao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.macedovingithub.algafoodAPI.di.modelo.Cliente;
 
 @Profile("prod")  // ANOTAÇÂO Profile e seu identificador de perfil
-@TipoDoNotificador(NivelUrgencia.URGENTE)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
+@TipoDoNotificador(NivelUrgencia.NORMAL)  // Utiliza a ANOTAÇÃO CUSTOMIZADA
 //@Qualifier("urgente") // Utilizando identificador com nome mais abrangente
 //@Qualifier("email")
-//@Primary                                    
+@Primary                                    
 @Component
 public class NotificadorEmail implements Notificador {
 	

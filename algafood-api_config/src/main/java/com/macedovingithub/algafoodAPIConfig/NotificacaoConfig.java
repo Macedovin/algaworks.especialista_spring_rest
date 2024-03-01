@@ -1,6 +1,7 @@
 package com.macedovingithub.algafoodAPIConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -18,6 +19,9 @@ public class NotificacaoConfig {
 	
 	@Autowired
 	private NotificadorEmailProperties emailProperties;
+	
+	@Value("${exibe.path.java}")
+	private String localJava;
 	
 	@Profile("prod") // Utiliza a ANOTAÇÃO Profile e o identificador de perfil 
 	@TipoDoNotificador(NivelUrgencia.NORMAL) // Utiliza a ANOTAÇÃO CUSTOMIZADA
@@ -37,7 +41,7 @@ public class NotificacaoConfig {
 	@Bean
 	public NotificadorEmailMock notificadorEmailmock() {
 		
-		NotificadorEmailMock notificador = new NotificadorEmailMock("smtp.algamail.com.br");
+		NotificadorEmailMock notificador = new NotificadorEmailMock("smtp.algamail.com.br", localJava, emailProperties);
 		notificador.setCaixaAlta(false);
 		
 		return notificador;

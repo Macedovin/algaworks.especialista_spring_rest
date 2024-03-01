@@ -32,6 +32,11 @@ public class NotificadorEmail implements Notificador {
 		System.out.println("NotificadorEmail REAL");
 	}
 	*/
+// -> Construtor default 
+	public NotificadorEmail() {
+		
+		System.out.println("NotificadorEmail REAL");
+	}
 	
 	@Override
 	public void notificar(Cliente cliente, String mensagem) {
